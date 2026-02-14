@@ -17,8 +17,9 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-6 py-8">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           {/* Brand */}
-          <div className="text-sm text-black">
-            © {new Date().getFullYear()}{"  "}
+          <div className="text-sm text-black dark:text-white">
+            © {new Date().getFullYear()}
+            {"  "}
             <span className="font-heading font-bold text-primary">
               Sahil Jadhav
             </span>

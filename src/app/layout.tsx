@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { spaceGrotesk, inter, jetbrainsMono } from "@/lib";
 import { ThemeProvider } from "@/providers";
-import { Footer, Navbar } from "@/components";
+import { Footer, LoadingScreen, Navbar } from "@/components";
 
 export const metadata: Metadata = {
   title: {
@@ -55,6 +55,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange={false}
         >
+          <LoadingScreen />
           <Navbar />
           {children}
           <Footer />

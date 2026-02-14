@@ -5,18 +5,18 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  /* ── Typography ─────────────────────────────────────────── */
+  /* Typography */
   --font-sans: var(--font-sans);
   --font-mono: var(--font-geist-mono);
   --font-heading: var(--font-heading);
   --font-body: var(--font-body);
 
-  /* ── Core colors ─────────────────────────────────────────── */
+  /* Core colors */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-surface: var(--surface);
 
-  /* ── Component colors ────────────────────────────────────── */
+  /* Component colors */
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
   --color-popover: var(--popover);
@@ -34,18 +34,18 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
 
-  /* ── Gradients ───────────────────────────────────────────── */
+  /* Gradients */
   --color-gradient-start: var(--gradient-start);
   --color-gradient-end: var(--gradient-end);
 
-  /* ── Charts ──────────────────────────────────────────────── */
+  /* Charts */
   --color-chart-1: var(--chart-1);
   --color-chart-2: var(--chart-2);
   --color-chart-3: var(--chart-3);
   --color-chart-4: var(--chart-4);
   --color-chart-5: var(--chart-5);
 
-  /* ── Sidebar ─────────────────────────────────────────────── */
+  /* Sidebar */
   --color-sidebar: var(--sidebar);
   --color-sidebar-foreground: var(--sidebar-foreground);
   --color-sidebar-primary: var(--sidebar-primary);
@@ -55,7 +55,7 @@
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
 
-  /* ── Radius ──────────────────────────────────────────────── */
+  /* Radius */
   --radius-sm: 0.375rem;
   --radius-md: 0.5rem;
   --radius-lg: 0.75rem;
@@ -65,9 +65,7 @@
   --radius-4xl: calc(var(--radius) + 16px);
 }
 
-/* ─────────────────────────────────────────────────────────────
-   Root / Light mode
-   ───────────────────────────────────────────────────────────── */
+/* Root / Light mode */
 :root {
   /* shadcn base tokens */
   --background: #FAFAF9;
@@ -114,9 +112,7 @@
   --font-geist-mono: "JetBrains Mono", monospace;
 }
 
-/* ─────────────────────────────────────────────────────────────
-   Dark mode
-   ───────────────────────────────────────────────────────────── */
+/* Dark mode */
 .dark {
   /* shadcn base tokens */
   --background: #0A0A0F;
@@ -157,9 +153,7 @@
   --gradient-end: #22D3EE;
 }
 
-/* ─────────────────────────────────────────────────────────────
-   Light mode class (explicit override, mirrors :root brand tokens)
-   ───────────────────────────────────────────────────────────── */
+/* Light mode class (explicit override, mirrors :root brand tokens) */
 .light {
   --background: #FAFAF9;
   --foreground: #1A1A2E;
@@ -173,9 +167,7 @@
   --gradient-end: #0D9488;
 }
 
-/* ─────────────────────────────────────────────────────────────
-   Base styles
-   ───────────────────────────────────────────────────────────── */
+/* Base styles */
 @layer base {
 
   *,
@@ -216,7 +208,7 @@
     color: white;
   }
 
-  /* ── Scrollbar ───────────────────────────────────────────── */
+  /* Scrollbar */
   ::-webkit-scrollbar {
     width: 8px;
   }
@@ -233,4 +225,15 @@
   ::-webkit-scrollbar-thumb:hover {
     background: var(--color-secondary);
   }
+}
+
+/* Glitch effect clips */
+.clip-glitch-1 {
+  clip-path: inset(20% 0 30% 0);
+  transform: translate(-2px, 2px);
+}
+
+.clip-glitch-2 {
+  clip-path: inset(50% 0 10% 0);
+  transform: translate(2px, -2px);
 }
