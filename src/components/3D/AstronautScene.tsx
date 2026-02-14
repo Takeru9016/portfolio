@@ -26,8 +26,8 @@ function AstronautModel() {
       <primitive
         ref={ref}
         object={scene}
-        scale={1.4}
-        position={[0, -1.5, 0]}
+        scale={1}
+        position={[0, -1, 0]}
         rotation={[0, 0, 0]}
       />
     </Float>

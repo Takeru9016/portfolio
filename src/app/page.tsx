@@ -1,13 +1,18 @@
-import { PageTransition } from "@/components";
+import {
+  FeaturedProjects,
+  HeroSection,
+  PageTransition,
+  StatsSection,
+} from "@/components";
 
 export default function Home() {
   return (
     <PageTransition>
-      <section className="flex items-center justify-center min-h-[80vh]">
-        <h1 className="text-5xl font-heading font-bold">
-          Home <span className="text-primary">Page</span>
-        </h1>
-      </section>
+      <main>
+        <HeroSection />
+        <StatsSection />
+        <FeaturedProjects />
+      </main>
     </PageTransition>
   );
 }

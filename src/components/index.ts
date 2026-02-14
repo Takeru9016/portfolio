@@ -5,6 +5,9 @@ export { PageTransition } from "./common/PageTransition";
 export { AnimatedText } from "./common/AnimatedText";
 export { MagneticButton } from "./common/MagneticButton";
 export { SectionHeader } from "./common/SectionHeader";
+export { HeroSection } from "./common/Hero";
+export { StatsSection } from "./common/Stats";
+export { FeaturedProjects } from "./common/FeaturedProject";
 
 export { LoadingScreen } from "./states/LoadingScreen";
 export { SkeletonCard, SkeletonGrid } from "./states/SkeletonCard";
@@ -15,3 +18,4 @@ export { Canvas } from "./3D/Canvas";
 export { Loader3DScene } from "./3D/Loader3D";
 export { AstronautScene } from "./3D/AstronautScene";
 export { CanvasErrorBoundary } from "./3D/CanvasErrorBoundary";
+export { HeroScene } from "./3D/HeroScene";

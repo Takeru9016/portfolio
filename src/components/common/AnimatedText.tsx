@@ -35,9 +35,17 @@ export function AnimatedText({
 
     const elements = container.querySelectorAll(".anim-unit");
 
-    const config: gsap.TweenVars = {
+    // Set initial state
+    gsap.set(elements, { opacity: 1, y: 0 });
+
+    const animConfig: gsap.TweenVars = {
       y: 40,
       opacity: 0,
+    };
+
+    const toConfig: gsap.TweenVars = {
+      y: 0,
+      opacity: 1,
       duration: 0.8,
       stagger,
       delay,
@@ -45,8 +53,8 @@ export function AnimatedText({
     };
 
     if (scrollTrigger) {
-      gsap.from(elements, {
-        ...config,
+      gsap.fromTo(elements, animConfig, {
+        ...toConfig,
         scrollTrigger: {
           trigger: container,
           start: "top 85%",
@@ -54,7 +62,7 @@ export function AnimatedText({
         },
       });
     } else {
-      gsap.from(elements, config);
+      gsap.fromTo(elements, animConfig, toConfig);
     }
 
     return () => {

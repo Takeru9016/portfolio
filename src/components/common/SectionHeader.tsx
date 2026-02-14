@@ -26,7 +26,7 @@ export function SectionHeader({
         text={`${title} ${highlight}`}
         as="h2"
         animation="words"
-        className="text-4xl md:text-5xl font-heading font-bold [&>.anim-unit:last-child]:text-primary"
+        className="text-4xl md:text-5xl font-heading font-bold text-black dark:text-white [&>.anim-unit:last-child]:text-primary"
       />
       {subtitle && (
         <AnimatedText
@@ -34,7 +34,7 @@ export function SectionHeader({
           as="p"
           animation="fade-up"
           delay={0.3}
-          className="mt-4 text-muted text-lg max-w-2xl mx-auto"
+          className="mt-4 text-black dark:text-muted-foreground text-lg max-w-2xl mx-auto"
         />
       )}
     </div>
