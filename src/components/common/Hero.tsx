@@ -9,6 +9,16 @@ import Link from "next/link";
 
 import { AnimatedText, MagneticButton } from "@/components";
 
+interface HeroProps {
+  settings?: {
+    name?: string;
+    tagline?: string;
+    github?: string;
+    linkedin?: string;
+    twitter?: string;
+  };
+}
+
 const Canvas = dynamic(
   () =>
     import("@/components/3D/Canvas").then((mod) => ({ default: mod.Canvas })),
@@ -23,19 +33,29 @@ const HeroScene = dynamic(
   { ssr: false },
 );
 
-const socials = [
-  { icon: Github, href: "https://github.com/Takeru9016", label: "GitHub" },
-  {
-    icon: Linkedin,
-    href: "https://linkedin.com/in/sahiljadhav",
-    label: "LinkedIn",
-  },
-  { icon: Twitter, href: "https://twitter.com/sahiljadhav", label: "Twitter" },
-];
-
-export function HeroSection() {
+export function HeroSection({ settings }: HeroProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const scrollIndicatorRef = useRef<HTMLDivElement>(null);
+
+  const name = settings?.name || "Sahil Jadhav";
+  const tagline = settings?.tagline || "Fullstack Developer";
+  const github = settings?.github || "https://github.com/Takeru9016";
+  const linkedin = settings?.linkedin || "https://linkedin.com/in/sahiljadhav";
+  const twitter = settings?.twitter || "https://twitter.com/sahiljadhav";
+
+  const socials = [
+    { icon: Github, href: github, label: "GitHub" },
+    {
+      icon: Linkedin,
+      href: linkedin,
+      label: "LinkedIn",
+    },
+    {
+      icon: Twitter,
+      href: twitter,
+      label: "Twitter",
+    },
+  ];
 
   useEffect(() => {
     // Scroll indicator bounce animation
@@ -76,7 +96,7 @@ export function HeroSection() {
 
         {/* Name */}
         <AnimatedText
-          text="Sahil Jadhav"
+          text={name}
           className="text-5xl md:text-7xl lg:text-8xl font-heading font-bold mb-4 text-foreground"
           delay={0.4}
           scrollTrigger={false}
@@ -89,11 +109,8 @@ export function HeroSection() {
           transition={{ duration: 0.6, delay: 0.8 }}
           className="text-lg md:text-xl lg:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto"
         >
-          A{" "}
-          <span className="text-primary font-semibold">
-            Fullstack Developer
-          </span>{" "}
-          who builds{" "}
+          A <span className="text-primary font-semibold">{tagline}</span> who
+          builds{" "}
           <span className="text-secondary font-semibold">interactive</span> &{" "}
           <span className="text-accent font-semibold">delightful</span> web
           experiences

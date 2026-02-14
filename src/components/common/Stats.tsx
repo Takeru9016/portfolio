@@ -6,13 +6,11 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-interface Stat {
-  value: number;
-  suffix: string;
-  label: string;
+interface StatsProps {
+  stats?: { value: number; suffix: string; label: string }[];
 }
 
-const stats: Stat[] = [
+const defaultStats = [
   { value: 2, suffix: "+", label: "Years Experience" },
   { value: 20, suffix: "+", label: "Projects Completed" },
   { value: 10, suffix: "+", label: "Technologies" },
@@ -60,11 +58,12 @@ function AnimatedCounter({ value, suffix }: { value: number; suffix: string }) {
   );
 }
 
-export function StatsSection() {
+export function StatsSection({ stats }: StatsProps) {
+  const displayStats = stats?.length ? stats : defaultStats;
   return (
     <section className="py-20 px-4">
       <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8">
-        {stats.map((stat) => (
+        {displayStats.map((stat) => (
           <div key={stat.label} className="text-center space-y-2">
             <AnimatedCounter value={stat.value} suffix={stat.suffix} />
             <p className="text-sm md:text-base text-muted-foreground">

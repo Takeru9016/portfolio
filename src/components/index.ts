@@ -8,6 +8,7 @@ export { SectionHeader } from "./common/SectionHeader";
 export { HeroSection } from "./common/Hero";
 export { StatsSection } from "./common/Stats";
 export { FeaturedProjects } from "./common/FeaturedProject";
+export { LayoutWrapper } from "./common/LayoutWrapper";
 
 export { LoadingScreen } from "./states/LoadingScreen";
 export { SkeletonCard, SkeletonGrid } from "./states/SkeletonCard";
