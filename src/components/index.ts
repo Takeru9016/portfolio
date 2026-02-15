@@ -14,6 +14,9 @@ export { Timeline } from "./common/Timeline";
 export { AboutContent } from "./common/About";
 export { SkillsContent } from "./common/Skills";
 export { SkillCard } from "./common/SkillCard";
+export { ProjectsContent } from "./common/Projects";
+export { ProjectCard } from "./common/ProjectCard";
+export { ProjectDetailContent } from "./common/ProjectDetailCard";
 
 export { LoadingScreen } from "./states/LoadingScreen";
 export { SkeletonCard, SkeletonGrid } from "./states/SkeletonCard";

@@ -1,15 +1,18 @@
-import { PageTransition } from "@/components";
+import { PageTransition, ProjectsContent } from "@/components";
+import { getAllProjects } from "@/sanity/lib/fetch";
 
-export const metadata = { title: "Projects" };
+export const metadata = {
+  title: "Projects | Sahil Jadhav",
+  description: "Explore my portfolio of web development projects.",
+};
 
-export default function Projects() {
+export const revalidate = 60;
+
+export default async function Projects() {
+  const projects = await getAllProjects();
   return (
     <PageTransition>
-      <section className="flex items-center justify-center min-h-[80vh]">
-        <h1 className="text-5xl font-heading font-bold">
-          My <span className="text-primary">Projects</span>
-        </h1>
-      </section>
+      <ProjectsContent projects={projects} />
     </PageTransition>
   );
 }
