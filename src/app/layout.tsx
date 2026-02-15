@@ -3,23 +3,28 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { spaceGrotesk, inter, jetbrainsMono } from "@/lib";
 import { ThemeProvider } from "@/providers";
-import { LayoutWrapper, LoadingScreen } from "@/components";
+import { LayoutWrapper, LoadingScreen, ProgressBar, ScrollToTop } from "@/components";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://sahiljadhav.vercel.app"),
   title: {
     default: "Sahil Jadhav | Fullstack Developer",
     template: "%s | Sahil Jadhav",
   },
   description:
-    "Fullstack developer crafting fast, responsive, and visually stunning web experiences.",
+    "Fullstack developer crafting modern web experiences with React, Next.js, and Three.js. Building performant, accessible, and visually stunning applications.",
   keywords: [
     "Sahil Jadhav",
     "Fullstack Developer",
-    "React",
+    "React Developer",
     "Next.js",
+    "Three.js",
+    "Web Developer",
     "Portfolio",
+    "India",
   ],
-  authors: [{ name: "Sahil Jadhav" }],
+  authors: [{ name: "Sahil Jadhav", url: "https://sahiljadhav.vercel.app" }],
+  creator: "Sahil Jadhav",
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -27,15 +32,37 @@ export const metadata: Metadata = {
     siteName: "Sahil Jadhav",
     title: "Sahil Jadhav | Fullstack Developer",
     description:
-      "Fullstack developer crafting fast, responsive, and visually stunning web experiences.",
+      "Fullstack developer crafting modern web experiences with React, Next.js, and Three.js.",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Sahil Jadhav - Fullstack Developer",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    creator: "@dev_takeru",
+    title: "Sahil Jadhav | Fullstack Developer",
+    description:
+      "Fullstack developer crafting modern web experiences with React, Next.js, and Three.js.",
+    images: ["/og-image.png"],
+    creator: "@sahiljadhav",
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  verification: {
+    // google: 'your-google-verification-code',
   },
 };
 
@@ -56,6 +83,8 @@ export default function RootLayout({
           disableTransitionOnChange={false}
         >
           <LoadingScreen />
+          <ScrollToTop />
+          <ProgressBar />
           <LayoutWrapper>{children}</LayoutWrapper>
         </ThemeProvider>
       </body>
