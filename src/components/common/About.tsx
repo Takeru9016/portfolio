@@ -85,10 +85,12 @@ export function AboutContent({ settings }: AboutContentProps) {
   const location = settings?.location || defaults.location;
   const yearsExperience = settings?.yearsExperience || defaults.yearsExperience;
   const jobTitle = settings?.jobTitle || defaults.jobTitle;
-  const funFacts =
-    settings?.funFacts?.length ? settings.funFacts : defaults.funFacts;
-  const timeline =
-    settings?.timeline?.length ? settings.timeline : defaults.timeline;
+  const funFacts = settings?.funFacts?.length
+    ? settings.funFacts
+    : defaults.funFacts;
+  const timeline = settings?.timeline?.length
+    ? settings.timeline
+    : defaults.timeline;
   const resumeUrl = settings?.resumeUrl;
 
   return (

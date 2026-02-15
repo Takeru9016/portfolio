@@ -22,7 +22,7 @@ export function ThemeToggle() {
       aria-label={`Switch to ${isDark ? "light" : "dark"} mode`}
     >
       <AnimatePresence mode="wait">
-        {isDark ?
+        {isDark ? (
           <motion.div
             key="moon"
             initial={{ rotate: -90, opacity: 0, scale: 0.5 }}
@@ -32,7 +32,8 @@ export function ThemeToggle() {
           >
             <Moon className="h-5 w-5 text-secondary" />
           </motion.div>
-        : <motion.div
+        ) : (
+          <motion.div
             key="sun"
             initial={{ rotate: 90, opacity: 0, scale: 0.5 }}
             animate={{ rotate: 0, opacity: 1, scale: 1 }}
@@ -41,7 +42,7 @@ export function ThemeToggle() {
           >
             <Sun className="h-5 w-5 text-accent" />
           </motion.div>
-        }
+        )}
       </AnimatePresence>
     </button>
   );

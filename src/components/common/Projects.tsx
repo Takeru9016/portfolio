@@ -102,9 +102,9 @@ export function ProjectsContent({ projects }: { projects: Project[] }) {
                 key={tag}
                 onClick={() => setActiveFilter(tag)}
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
-                  activeFilter === tag ?
-                    "bg-primary text-primary-foreground"
-                  : "bg-card border border-border hover:border-primary/50 text-muted-foreground hover:text-foreground"
+                  activeFilter === tag
+                    ? "bg-primary text-primary-foreground"
+                    : "bg-card border border-border hover:border-primary/50 text-muted-foreground hover:text-foreground"
                 }`}
               >
                 {tag}
@@ -115,7 +115,7 @@ export function ProjectsContent({ projects }: { projects: Project[] }) {
 
         {/* Projects Grid */}
         <section>
-          {filteredProjects.length > 0 ?
+          {filteredProjects.length > 0 ? (
             <motion.div
               layout
               className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"
@@ -144,11 +144,12 @@ export function ProjectsContent({ projects }: { projects: Project[] }) {
                 ))}
               </AnimatePresence>
             </motion.div>
-          : <EmptyState
+          ) : (
+            <EmptyState
               title="No projects found"
               message="No projects match this filter."
             />
-          }
+          )}
         </section>
       </div>
     </main>

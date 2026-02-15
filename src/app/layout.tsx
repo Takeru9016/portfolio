@@ -1,9 +1,15 @@
+import { Analytics } from "@vercel/analytics/next";
 import type { Metadata } from "next";
 
 import "./globals.css";
-import { spaceGrotesk, inter, jetbrainsMono } from "@/lib";
+import {
+  LayoutWrapper,
+  LoadingScreen,
+  ProgressBar,
+  ScrollToTop,
+} from "@/components";
+import { inter, jetbrainsMono, spaceGrotesk } from "@/lib";
 import { ThemeProvider } from "@/providers";
-import { LayoutWrapper, LoadingScreen, ProgressBar, ScrollToTop } from "@/components";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://sahiljadhav.vercel.app"),
@@ -87,6 +93,7 @@ export default function RootLayout({
           <ProgressBar />
           <LayoutWrapper>{children}</LayoutWrapper>
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   );

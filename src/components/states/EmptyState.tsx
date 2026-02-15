@@ -30,7 +30,9 @@ export function EmptyState({
         <h3 className="text-2xl font-heading font-bold text-foreground">
           {title}
         </h3>
-        <p className="mt-2 text-black dark:text-muted-foreground max-w-sm">{message}</p>
+        <p className="mt-2 text-black dark:text-muted-foreground max-w-sm">
+          {message}
+        </p>
       </motion.div>
     </div>
   );

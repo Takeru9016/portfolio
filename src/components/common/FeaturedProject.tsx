@@ -34,12 +34,13 @@ export function FeaturedProjects({
           highlight={""}
         />
 
-        {projects.length === 0 ?
+        {projects.length === 0 ? (
           <EmptyState
             title="Projects loading..."
             message="My latest work will appear here once connected to the CMS."
           />
-        : <>
+        ) : (
+          <>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
               {projects.map((project, i) => (
                 <motion.div
@@ -52,16 +53,17 @@ export function FeaturedProjects({
                   <div className="group relative rounded-2xl border border-border bg-card overflow-hidden hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/5">
                     {/* Image */}
                     <div className="aspect-video bg-muted overflow-hidden">
-                      {project.image ?
+                      {project.image ? (
                         <img
                           src={project.image}
                           alt={project.title}
                           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                         />
-                      : <div className="w-full h-full flex items-center justify-center text-muted-foreground">
+                      ) : (
+                        <div className="w-full h-full flex items-center justify-center text-muted-foreground">
                           No Preview
                         </div>
-                      }
+                      )}
                     </div>
 
                     {/* Content */}
@@ -126,7 +128,7 @@ export function FeaturedProjects({
               </MagneticButton>
             </div>
           </>
-        }
+        )}
       </div>
     </section>
   );
