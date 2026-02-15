@@ -21,6 +21,9 @@ export default defineType({
       name: "logo",
       title: "Company Logo",
       type: "image",
+      options: {
+        hotspot: true,
+      },
     }),
     defineField({
       name: "startDate",
@@ -38,6 +41,25 @@ export default defineType({
       title: "Currently Working Here",
       type: "boolean",
       initialValue: false,
+    }),
+    defineField({
+      name: "location",
+      title: "Location",
+      type: "string",
+    }),
+    defineField({
+      name: "type",
+      title: "Employment Type",
+      type: "string",
+      options: {
+        list: [
+          { title: "Full-time", value: "full-time" },
+          { title: "Part-time", value: "part-time" },
+          { title: "Contract", value: "contract" },
+          { title: "Freelance", value: "freelance" },
+          { title: "Internship", value: "internship" },
+        ],
+      },
     }),
     defineField({
       name: "description",

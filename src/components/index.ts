@@ -17,6 +17,7 @@ export { SkillCard } from "./common/SkillCard";
 export { ProjectsContent } from "./common/Projects";
 export { ProjectCard } from "./common/ProjectCard";
 export { ProjectDetailContent } from "./common/ProjectDetailCard";
+export { ExperienceContent } from "./common/Experience";
 
 export { LoadingScreen } from "./states/LoadingScreen";
 export { SkeletonCard, SkeletonGrid } from "./states/SkeletonCard";

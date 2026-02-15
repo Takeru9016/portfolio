@@ -79,6 +79,8 @@ export const allExperienceQuery = groq`
     "logo": logo.asset->url,
     startDate,
     endDate,
+    location,
+    type,
     current,
     description,
     highlights,
