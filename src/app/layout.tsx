@@ -1,9 +1,14 @@
 import type { Metadata } from "next";
 
 import "./globals.css";
+import {
+  LayoutWrapper,
+  LoadingScreen,
+  ProgressBar,
+  ScrollToTop,
+} from "@/components";
 import { spaceGrotesk, inter, jetbrainsMono } from "@/lib";
-import { ThemeProvider } from "@/providers";
-import { LayoutWrapper, LoadingScreen, ProgressBar, ScrollToTop } from "@/components";
+import { PostHogPageView, PostHogProvider, ThemeProvider } from "@/providers";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://sahiljadhav.vercel.app"),
@@ -76,17 +81,20 @@ export default function RootLayout({
       <body
         className={`${spaceGrotesk.variable} ${inter.variable} ${jetbrainsMono.variable} antialiased`}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem
-          disableTransitionOnChange={false}
-        >
-          <LoadingScreen />
-          <ScrollToTop />
-          <ProgressBar />
-          <LayoutWrapper>{children}</LayoutWrapper>
-        </ThemeProvider>
+        <PostHogProvider>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="dark"
+            enableSystem
+            disableTransitionOnChange={false}
+          >
+            <PostHogPageView />
+            <LoadingScreen />
+            <ScrollToTop />
+            <ProgressBar />
+            <LayoutWrapper>{children}</LayoutWrapper>
+          </ThemeProvider>
+        </PostHogProvider>
       </body>
     </html>
   );
