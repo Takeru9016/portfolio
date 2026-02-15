@@ -3,11 +3,7 @@
 import { usePathname } from "next/navigation";
 import { Footer, Navbar } from "@/components";
 
-export function LayoutWrapper({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export function LayoutWrapper({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const isStudio = pathname.startsWith("/studio");
 

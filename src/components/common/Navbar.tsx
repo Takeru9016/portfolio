@@ -46,9 +46,9 @@ export function Navbar() {
                   href={link.href}
                   className={cn(
                     "relative px-4 py-2 text-sm font-medium rounded-lg transition-colors",
-                    isActive ? "text-primary" : (
-                      "dark:text-muted-foreground dark:hover:text-white hover:text-primary"
-                    ),
+                    isActive
+                      ? "text-primary"
+                      : "dark:text-muted-foreground dark:hover:text-white hover:text-primary",
                   )}
                 >
                   {isActive && (
@@ -78,9 +78,11 @@ export function Navbar() {
               className="md:hidden h-10 w-10 rounded-xl bg-surface border border-border flex items-center justify-center cursor-pointer"
               aria-label="Toggle menu"
             >
-              {isNavOpen ?
+              {isNavOpen ? (
                 <X className="h-5 w-5" />
-              : <Menu className="h-5 w-5" />}
+              ) : (
+                <Menu className="h-5 w-5" />
+              )}
             </button>
           </div>
         </div>
@@ -110,9 +112,9 @@ export function Navbar() {
                         onClick={closeNav}
                         className={cn(
                           "block px-4 py-3 rounded-lg text-sm font-medium transition-colors",
-                          isActive ?
-                            "bg-primary/10 text-primary"
-                          : "dark:text-muted-foreground dark:hover:text-white hover:text-primary hover:bg-surface",
+                          isActive
+                            ? "bg-primary/10 text-primary"
+                            : "dark:text-muted-foreground dark:hover:text-white hover:text-primary hover:bg-surface",
                         )}
                       >
                         {link.label}

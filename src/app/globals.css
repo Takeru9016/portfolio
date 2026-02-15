@@ -68,22 +68,22 @@
 /* Root / Light mode */
 :root {
   /* shadcn base tokens */
-  --background: #FAFAF9;
-  --foreground: #1A1A2E;
+  --background: #fafaf9;
+  --foreground: #1a1a2e;
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: #7C3AED;
+  --primary: #7c3aed;
   --primary-foreground: oklch(0.985 0 0);
-  --secondary: #0D9488;
+  --secondary: #0d9488;
   --secondary-foreground: oklch(0.205 0 0);
   --muted: oklch(0.97 0 0);
-  --muted-foreground: #94A3B8;
-  --accent: #E11D48;
+  --muted-foreground: #94a3b8;
+  --accent: #e11d48;
   --accent-foreground: oklch(0.205 0 0);
   --destructive: oklch(0.58 0.22 27);
-  --border: #E5E7EB;
+  --border: #e5e7eb;
   --input: oklch(0.922 0 0);
   --ring: oklch(0.708 0 0);
   --chart-1: oklch(0.809 0.105 251.813);
@@ -102,9 +102,9 @@
   --sidebar-ring: oklch(0.708 0 0);
 
   /* Brand semantic tokens */
-  --surface: #F3F4F6;
-  --gradient-start: #7C3AED;
-  --gradient-end: #0D9488;
+  --surface: #f3f4f6;
+  --gradient-start: #7c3aed;
+  --gradient-end: #0d9488;
 
   /* Typography */
   --font-heading: "Space Grotesk", sans-serif;
@@ -115,22 +115,22 @@
 /* Dark mode */
 .dark {
   /* shadcn base tokens */
-  --background: #0A0A0F;
-  --foreground: #F1F0F0;
+  --background: #0a0a0f;
+  --foreground: #f1f0f0;
   --card: oklch(0.205 0 0);
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.205 0 0);
   --popover-foreground: oklch(0.985 0 0);
-  --primary: #8B5CF6;
+  --primary: #8b5cf6;
   --primary-foreground: oklch(0.205 0 0);
-  --secondary: #22D3EE;
+  --secondary: #22d3ee;
   --secondary-foreground: oklch(0.985 0 0);
   --muted: oklch(0.269 0 0);
-  --muted-foreground: #64748B;
-  --accent: #F472B6;
+  --muted-foreground: #64748b;
+  --accent: #f472b6;
   --accent-foreground: oklch(0.985 0 0);
   --destructive: oklch(0.704 0.191 22.216);
-  --border: #1E1E2E;
+  --border: #1e1e2e;
   --input: oklch(1 0 0 / 15%);
   --ring: oklch(0.556 0 0);
   --chart-1: oklch(0.809 0.105 251.813);
@@ -148,28 +148,27 @@
   --sidebar-ring: oklch(0.556 0 0);
 
   /* Brand semantic tokens */
-  --surface: #12121A;
-  --gradient-start: #8B5CF6;
-  --gradient-end: #22D3EE;
+  --surface: #12121a;
+  --gradient-start: #8b5cf6;
+  --gradient-end: #22d3ee;
 }
 
 /* Light mode class (explicit override, mirrors :root brand tokens) */
 .light {
-  --background: #FAFAF9;
-  --foreground: #1A1A2E;
-  --primary: #7C3AED;
-  --secondary: #0D9488;
-  --accent: #E11D48;
-  --muted-foreground: #94A3B8;
-  --border: #E5E7EB;
-  --surface: #F3F4F6;
-  --gradient-start: #7C3AED;
-  --gradient-end: #0D9488;
+  --background: #fafaf9;
+  --foreground: #1a1a2e;
+  --primary: #7c3aed;
+  --secondary: #0d9488;
+  --accent: #e11d48;
+  --muted-foreground: #94a3b8;
+  --border: #e5e7eb;
+  --surface: #f3f4f6;
+  --gradient-start: #7c3aed;
+  --gradient-end: #0d9488;
 }
 
 /* Base styles */
 @layer base {
-
   *,
   *::before,
   *::after {
@@ -186,7 +185,9 @@
   body {
     @apply bg-background text-foreground;
     font-family: var(--font-body);
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease;
   }
 
   h1,
@@ -239,7 +240,6 @@
 }
 /* Reduced motion preference */
 @media (prefers-reduced-motion: reduce) {
-
   *,
   *::before,
   *::after {
@@ -249,9 +249,9 @@
     scroll-behavior: auto !important;
   }
 
-    html {
-      scroll-behavior: auto;
-    }
+  html {
+    scroll-behavior: auto;
+  }
 }
 
 /* Selection color */

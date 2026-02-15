@@ -158,7 +158,7 @@ export function ProjectDetailContent({ project }: { project: Project | null }) {
         className="relative h-[60vh] md:h-[70vh] overflow-hidden"
       >
         <motion.div style={{ y }} className="absolute inset-0">
-          {displayProject.image ?
+          {displayProject.image ? (
             <Image
               src={displayProject.image}
               alt={displayProject.title}
@@ -166,14 +166,15 @@ export function ProjectDetailContent({ project }: { project: Project | null }) {
               className="object-cover"
               priority
             />
-          : <div className="w-full h-full bg-linear-to-br from-primary/20 via-secondary/10 to-accent/20 flex items-center justify-center">
+          ) : (
+            <div className="w-full h-full bg-linear-to-br from-primary/20 via-secondary/10 to-accent/20 flex items-center justify-center">
               <motion.div
                 initial={{ scale: 0.8, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ duration: 0.5 }}
                 className="text-center"
               >
-                {isPortfolio ?
+                {isPortfolio ? (
                   <div className="relative w-48 h-32 md:w-64 md:h-40 mb-6 mx-auto rounded-xl overflow-hidden border border-border/50 shadow-2xl">
                     <Image
                       src="https://placehold.net/600x400.png"
@@ -182,13 +183,15 @@ export function ProjectDetailContent({ project }: { project: Project | null }) {
                       className="object-cover transition-transform duration-500 hover:scale-110"
                     />
                   </div>
-                : <span className="text-8xl md:text-9xl block mb-4">💻</span>}
+                ) : (
+                  <span className="text-8xl md:text-9xl block mb-4">💻</span>
+                )}
                 <span className="text-xl md:text-2xl font-mono text-muted-foreground">
                   {isPortfolio ? "You are here!" : "Project Preview"}
                 </span>
               </motion.div>
             </div>
-          }
+          )}
           {/* Overlay */}
           <div className="absolute inset-0 bg-linear-to-t from-background via-background/50 to-transparent" />
         </motion.div>

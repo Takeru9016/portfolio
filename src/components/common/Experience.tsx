@@ -96,8 +96,9 @@ export function ExperienceContent({
   experiences: Experience[];
 }) {
   const containerRef = useRef<HTMLDivElement>(null);
-  const displayExperiences =
-    experiences?.length ? experiences : defaultExperiences;
+  const displayExperiences = experiences?.length
+    ? experiences
+    : defaultExperiences;
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -173,9 +174,9 @@ export function ExperienceContent({
                 {/* Date (Desktop) */}
                 <div
                   className={`hidden md:flex md:w-1/2 ${
-                    index % 2 === 0 ?
-                      "justify-start pl-12"
-                    : "justify-end pr-12"
+                    index % 2 === 0
+                      ? "justify-start pl-12"
+                      : "justify-end pr-12"
                   }`}
                 >
                   <div
@@ -204,7 +205,7 @@ export function ExperienceContent({
                     <div className="flex items-start gap-4 mb-4">
                       {/* Logo */}
                       <div className="w-12 h-12 rounded-xl bg-muted flex items-center justify-center overflow-hidden shrink-0">
-                        {exp.logo ?
+                        {exp.logo ? (
                           <Image
                             src={exp.logo}
                             alt={exp.company}
@@ -212,11 +213,12 @@ export function ExperienceContent({
                             height={48}
                             className="object-cover"
                           />
-                        : <Briefcase
+                        ) : (
+                          <Briefcase
                             size={24}
                             className="text-muted-foreground"
                           />
-                        }
+                        )}
                       </div>
 
                       <div className="flex-1 min-w-0">

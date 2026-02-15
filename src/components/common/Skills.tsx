@@ -60,9 +60,8 @@ const defaultSkills: Record<string, Skill[]> = {
 };
 
 export function SkillsContent({ skills }: { skills: Skill[] }) {
-  const groupedSkills =
-    skills?.length ?
-      skills.reduce(
+  const groupedSkills = skills?.length
+    ? skills.reduce(
         (acc, skill) => {
           const category = skill.category || "Other";
           if (!acc[category]) acc[category] = [];
