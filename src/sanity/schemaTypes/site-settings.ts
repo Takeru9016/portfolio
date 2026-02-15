@@ -19,13 +19,57 @@ export default defineType({
       name: "bio",
       title: "Short Bio",
       type: "text",
-      rows: 3,
+      rows: 4,
     }),
     defineField({
       name: "aboutText",
       title: "About Page Text",
       type: "array",
       of: [{ type: "block" }],
+    }),
+    defineField({
+      name: "location",
+      title: "Location",
+      type: "string",
+    }),
+    defineField({
+      name: "yearsExperience",
+      title: "Years of Experience",
+      type: "string",
+    }),
+    defineField({
+      name: "jobTitle",
+      title: "Job Title",
+      type: "string",
+    }),
+    defineField({
+      name: "funFacts",
+      title: "Fun Facts",
+      type: "array",
+      of: [
+        {
+          type: "object",
+          fields: [
+            { name: "emoji", title: "Emoji", type: "string" },
+            { name: "fact", title: "Fact", type: "string" },
+          ],
+        },
+      ],
+    }),
+    defineField({
+      name: "timeline",
+      title: "Journey Timeline",
+      type: "array",
+      of: [
+        {
+          type: "object",
+          fields: [
+            { name: "year", title: "Year", type: "string" },
+            { name: "title", title: "Title", type: "string" },
+            { name: "description", title: "Description", type: "text" },
+          ],
+        },
+      ],
     }),
     defineField({
       name: "profileImage",
@@ -37,6 +81,7 @@ export default defineType({
       name: "resumeFile",
       title: "Resume PDF",
       type: "file",
+      options: { accept: ".pdf" },
     }),
     defineField({
       name: "email",
@@ -59,20 +104,6 @@ export default defineType({
       type: "url",
     }),
     defineField({
-      name: "funFacts",
-      title: "Fun Facts",
-      type: "array",
-      of: [
-        {
-          type: "object",
-          fields: [
-            { name: "emoji", title: "Emoji", type: "string" },
-            { name: "fact", title: "Fact", type: "string" },
-          ],
-        },
-      ],
-    }),
-    defineField({
       name: "stats",
       title: "Stats",
       type: "array",
@@ -89,6 +120,6 @@ export default defineType({
     }),
   ],
   preview: {
-    select: { title: "name" },
+    select: { title: "Site Settings" },
   },
 });

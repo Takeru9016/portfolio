@@ -5,7 +5,7 @@ import {
   featuredProjectsQuery,
   projectBySlugQuery,
   allExperienceQuery,
-  allSkillsQuery,
+  getSkillsQuery,
 } from "./queries";
 
 export async function getSiteSettings() {
@@ -28,6 +28,6 @@ export async function getAllExperience() {
   return client.fetch(allExperienceQuery);
 }
 
-export async function getAllSkills() {
-  return client.fetch(allSkillsQuery);
+export async function getSkills() {
+  return client.fetch(getSkillsQuery);
 }

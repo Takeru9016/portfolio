@@ -1,15 +1,18 @@
-import { PageTransition } from "@/components";
+import { PageTransition, SkillsContent } from "@/components";
+import { getSkills } from "@/sanity/lib/fetch";
 
-export const metadata = { title: "Skills" };
+export const metadata = {
+  title: "Skills | Sahil Jadhav",
+  description: "Technologies and tools I work with.",
+};
 
-export default function Skills() {
+export const revalidate = 60;
+
+export default async function Skills() {
+  const skills = await getSkills();
   return (
     <PageTransition>
-      <section className="flex items-center justify-center min-h-[80vh]">
-        <h1 className="text-5xl font-heading font-bold">
-          My <span className="text-primary">Skills</span>
-        </h1>
-      </section>
+      <SkillsContent skills={skills} />
     </PageTransition>
   );
 }

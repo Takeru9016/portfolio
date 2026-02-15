@@ -7,8 +7,12 @@ export const siteSettingsQuery = groq`
     tagline,
     bio,
     aboutText,
+    location,
+    yearsExperience,
+    jobTitle,
+    timeline,
     profileImage,
-    resumeFile { asset-> { url } },
+    "resumeUrl": resumeFile.asset->url,
     email,
     github,
     linkedin,
@@ -25,7 +29,7 @@ export const allProjectsQuery = groq`
     title,
     slug,
     description,
-    image,
+    "thumbnail": thumbnail.asset->url,
     tags,
     category,
     liveUrl,
@@ -41,7 +45,7 @@ export const featuredProjectsQuery = groq`
     title,
     slug,
     description,
-    image,
+    "thumbnail": thumbnail.asset->url,
     tags,
     category,
     liveUrl,
@@ -56,8 +60,8 @@ export const projectBySlugQuery = groq`
     slug,
     description,
     longDescription,
-    image,
-    gallery,
+    "thumbnail": thumbnail.asset->url,
+    "images": images[].asset->url,
     tags,
     category,
     liveUrl,
@@ -72,7 +76,7 @@ export const allExperienceQuery = groq`
     _id,
     company,
     role,
-    logo,
+    "logo": logo.asset->url,
     startDate,
     endDate,
     current,
@@ -83,12 +87,10 @@ export const allExperienceQuery = groq`
 `;
 
 // Skills
-export const allSkillsQuery = groq`
-  *[_type == "skill"] | order(order asc) {
-    _id,
-    name,
-    icon,
-    category,
-    proficiency
-  }
-`;
+export const getSkillsQuery = groq`*[_type == "skill"] | order(category asc, proficiency desc) {
+      _id,
+      name,
+      "iconUrl": icon.asset->url,
+      category,
+      proficiency
+    }`;
