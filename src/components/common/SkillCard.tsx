@@ -23,7 +23,7 @@ export function SkillCard({ skill, index }: { skill: Skill; index: number }) {
     >
       {/* Icon */}
       <div className="w-10 h-10 mb-3 flex items-center justify-center">
-        {skill.iconUrl ?
+        {skill.iconUrl ? (
           <Image
             src={skill.iconUrl}
             alt={skill.name}
@@ -31,12 +31,13 @@ export function SkillCard({ skill, index }: { skill: Skill; index: number }) {
             height={40}
             className="object-contain"
           />
-        : <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center border border-primary/20">
+        ) : (
+          <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center border border-primary/20">
             <span className="text-lg font-bold text-primary">
               {skill.name.charAt(0).toUpperCase()}
             </span>
           </div>
-        }
+        )}
       </div>
 
       {/* Name */}

@@ -76,14 +76,15 @@ export function ProjectCard({
       {/* Thumbnail */}
       <Link href={`/projects/${slug}`}>
         <div className="relative h-48 md:h-56 overflow-hidden bg-muted">
-          {image ?
+          {image ? (
             <Image
               src={image}
               alt={title}
               fill
               className="object-cover transition-transform duration-500 group-hover:scale-110"
             />
-          : <div className="w-full h-full flex items-center justify-center text-4xl bg-linear-to-br from-primary/20 to-secondary/20">
+          ) : (
+            <div className="w-full h-full flex items-center justify-center text-4xl bg-linear-to-br from-primary/20 to-secondary/20">
               <Image
                 src="https://placehold.net/600x400.png"
                 alt={title}
@@ -91,7 +92,7 @@ export function ProjectCard({
                 className="object-cover transition-transform duration-500 group-hover:scale-110"
               />
             </div>
-          }
+          )}
           {/* Overlay on hover */}
           <div className="absolute inset-0 bg-linear-to-t from-background/90 via-background/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
         </div>

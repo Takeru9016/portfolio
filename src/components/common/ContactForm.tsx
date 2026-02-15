@@ -158,14 +158,16 @@ export function ContactForm({ onSuccess }: { onSuccess?: () => void }) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             className={`flex items-center gap-2 p-4 rounded-xl ${
-              formState.status === "success" ?
-                "bg-green-500/10 text-green-500"
-              : "bg-red-500/10 text-red-500"
+              formState.status === "success"
+                ? "bg-green-500/10 text-green-500"
+                : "bg-red-500/10 text-red-500"
             }`}
           >
-            {formState.status === "success" ?
+            {formState.status === "success" ? (
               <CheckCircle size={20} />
-            : <AlertCircle size={20} />}
+            ) : (
+              <AlertCircle size={20} />
+            )}
             <span className="text-sm">{formState.message}</span>
           </motion.div>
         )}
@@ -183,16 +185,17 @@ export function ContactForm({ onSuccess }: { onSuccess?: () => void }) {
             disabled={formState.status === "loading"}
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary text-primary-foreground rounded-full font-medium hover:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed transition-opacity"
           >
-            {formState.status === "loading" ?
+            {formState.status === "loading" ? (
               <>
                 <Loader2 size={18} className="animate-spin" />
                 Sending...
               </>
-            : <>
+            ) : (
+              <>
                 <Send size={18} />
                 Send Message
               </>
-            }
+            )}
           </button>
         </MagneticButton>
       </motion.div>
