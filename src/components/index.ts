@@ -9,6 +9,9 @@ export { HeroSection } from "./common/Hero";
 export { StatsSection } from "./common/Stats";
 export { FeaturedProjects } from "./common/FeaturedProject";
 export { LayoutWrapper } from "./common/LayoutWrapper";
+export { FunFacts } from "./common/FunFacts";
+export { Timeline } from "./common/Timeline";
+export { AboutContent } from "./common/About";
 
 export { LoadingScreen } from "./states/LoadingScreen";
 export { SkeletonCard, SkeletonGrid } from "./states/SkeletonCard";
@@ -20,3 +23,4 @@ export { Loader3DScene } from "./3D/Loader3D";
 export { AstronautScene } from "./3D/AstronautScene";
 export { CanvasErrorBoundary } from "./3D/CanvasErrorBoundary";
 export { HeroScene } from "./3D/HeroScene";
+export { AboutScene } from "./3D/AboutScene";
