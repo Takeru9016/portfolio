@@ -1,15 +1,15 @@
-import { PageTransition } from "@/components";
+import { ContactContent, PageTransition } from "@/components";
 
-export const metadata = { title: "Contact" };
+export const metadata = {
+  title: "Contact | Sahil Jadhav",
+  description:
+    "Get in touch with me for collaborations, projects, or just to say hi!",
+};
 
-export default function Contact() {
+export default function ContactPage() {
   return (
     <PageTransition>
-      <section className="flex items-center justify-center min-h-[80vh]">
-        <h1 className="text-5xl font-heading font-bold">
-          Get in <span className="text-primary">Touch</span>
-        </h1>
-      </section>
+      <ContactContent />
     </PageTransition>
   );
 }

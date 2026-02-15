@@ -18,6 +18,8 @@ export { ProjectsContent } from "./common/Projects";
 export { ProjectCard } from "./common/ProjectCard";
 export { ProjectDetailContent } from "./common/ProjectDetailCard";
 export { ExperienceContent } from "./common/Experience";
+export { ContactContent } from "./common/Contact";
+export { ContactForm } from "./common/ContactForm";
 
 export { LoadingScreen } from "./states/LoadingScreen";
 export { SkeletonCard, SkeletonGrid } from "./states/SkeletonCard";
@@ -31,3 +33,4 @@ export { CanvasErrorBoundary } from "./3D/CanvasErrorBoundary";
 export { HeroScene } from "./3D/HeroScene";
 export { AboutScene } from "./3D/AboutScene";
 export { SkillsScene } from "./3D/SkillScene";
+export { MailboxScene } from "./3D/MailBoxScene";
